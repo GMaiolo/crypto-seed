@@ -6,8 +6,9 @@ import * as icons from "../icons/";
 export function Home() {
   return (
     <div className="relative">
-      <Navbar />
-      <CoinsList />
+      <div className="mt-8 flex justify-center">
+        <CoinsList />
+      </div>
       <Drawer />
     </div>
   );

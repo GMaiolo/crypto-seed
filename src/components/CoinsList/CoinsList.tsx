@@ -2,7 +2,7 @@ import * as icons from "../../icons";
 
 export function CoinsList() {
   return (
-    <div className="h-full pt-2">
+    <div>
       <img
         className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
         src={icons["pk"]}
