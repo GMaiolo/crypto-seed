@@ -5,7 +5,7 @@ import * as icons from "../icons/";
 
 export function Home() {
   return (
-    <div className="relative bg-white">
+    <div className="relative">
       <Navbar />
       <CoinsList />
       <Drawer />
