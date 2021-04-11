@@ -4,7 +4,7 @@ import { Register } from "./register";
 
 export default function App() {
   return (
-    <div className="h-full bg-gray-100">
+    <div className="h-full gradient-background">
       <Router>
         <Switch>
           <Route path="/register">

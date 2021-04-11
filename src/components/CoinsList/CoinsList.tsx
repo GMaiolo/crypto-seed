@@ -1,6 +1,6 @@
-import * as icons from "../icons/";
+import * as icons from "../../icons";
 
-export function Home() {
+export function CoinsList() {
   return (
     <div className="h-full pt-2">
       <img

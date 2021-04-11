@@ -4,3 +4,12 @@ body,
   height: 100%;
   width: 100%;
 }
+
+.gradient-background {
+  background: rgb(52, 211, 153);
+  background: radial-gradient(
+    circle,
+    rgba(52, 211, 153, 1) 25%,
+    rgba(252, 70, 109, 0.35205625218837533) 75%
+  );
+}
