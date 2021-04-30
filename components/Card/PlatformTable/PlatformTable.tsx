@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { PlatformData } from "../../../shared/types";
+import { PlatformData } from "../../../types";
 import { formatMoney } from "../../../utils/formatMoney";
 import { PoolRow } from "./PoolRow";
 

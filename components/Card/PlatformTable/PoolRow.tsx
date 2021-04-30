@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { PoolInfo } from "../../../shared/types";
+import { PoolInfo } from "../../../types";
 import { formatMoney } from "../../../utils/formatMoney";
 import { getUserStakedPrice } from "../../../utils/poolUtils";
 import { PoolImage } from "./PoolImage";

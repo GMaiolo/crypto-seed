@@ -2,7 +2,7 @@ import { Contract, ethers } from "ethers";
 import { getBscProvider, parseEthNumber } from "../utils/etherUtils";
 import { BSC_VAULT_ABI, VALUE_LP_ABI } from "../contracts/bsc";
 import { getLpPrices, getPrice } from "./priceHelper";
-import { LPInfo, PlatformData, PoolInfo } from "../shared/types";
+import { LPInfo, PlatformData, PoolInfo } from "../types";
 import { Cache } from "memory-cache";
 
 export abstract class Platform {

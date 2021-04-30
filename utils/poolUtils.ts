@@ -1,4 +1,4 @@
-import { PoolInfo } from "../shared/types";
+import { PoolInfo } from "../types";
 import { formatMoney } from "./formatMoney";
 
 export const getPoolTokenPrice = (pool: PoolInfo) =>
