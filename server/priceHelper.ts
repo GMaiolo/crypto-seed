@@ -14,35 +14,29 @@ interface PricesResponse {
   };
 }
 
-const calculatedPricesCache = new Cache<string, number>();
-const apiPricesCache = new Cache<string, number>();
+let pricesCache: { [key: string]: number } = {};
 export const getPrice = async (address: string) => {
-  if (apiPricesCache.size() === 0) {
-    await updateApiPricesCache();
-  }
-  const cachedApiPrice = apiPricesCache.get(address.toLowerCase());
-  const cachedCalculatedPrice = calculatedPricesCache.get(
-    address.toLocaleLowerCase()
-  );
-  const price = cachedApiPrice || cachedCalculatedPrice;
+  const price = pricesCache[address.toLowerCase()];
   if (price) return price;
 };
 
-const updateApiPricesCache = async () => {
+export const initUpdatePricesCacheInterval = async () => {
+  await updatePricesCache();
+  setInterval(updatePricesCache, cacheTime);
+};
+
+const updatePricesCache = async () => {
   try {
+    pricesCache = {};
     const { data: response } = await axios.get<PricesResponse>(
       "https://api.pancakeswap.info/api/tokens"
     );
     const data = response.data;
     for (const addr in data) {
-      apiPricesCache.put(
-        addr.toLowerCase(),
-        Number(data[addr].price),
-        cacheTime
-      );
+      pricesCache[addr.toLowerCase()] = Number(data[addr].price);
     }
   } catch (err) {
-    console.log(err);
+    console.log("Could not get pancake token prices info");
   }
 };
 
@@ -71,11 +65,11 @@ export const getLpPrices = async (
     }
     if (priceToken0 == null) {
       priceToken0 = (supplyToken1 * priceToken1) / supplyToken0;
-      apiPricesCache.put(token0Addr, priceToken0, cacheTime);
+      pricesCache[token0Addr] = priceToken0;
     }
     if (priceToken1 == null) {
       priceToken1 = (supplyToken0 * priceToken0) / supplyToken1;
-      apiPricesCache.put(token1Addr, priceToken1, cacheTime);
+      pricesCache[token1Addr] = priceToken1;
     }
     if (priceToken0 != null && priceToken1 != null) {
       tvl = supplyToken0 * priceToken0 + supplyToken1 * priceToken1;
