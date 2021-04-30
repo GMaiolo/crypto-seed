@@ -9,7 +9,7 @@ export default function Register() {
 
   const navigate = () => {
     if (!addressRef.current.value) return;
-    router.push(`/fooo`);
+    router.push(`/${addressRef.current.value}`);
   };
 
   return (
@@ -33,7 +33,7 @@ export default function Register() {
                 id="wallet_address"
                 name="Wallet address"
                 type="text"
-                className="appearance-none rounded-none relative w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                className="appearance-none relative w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
                 placeholder="Wallet address"
               />
             </div>

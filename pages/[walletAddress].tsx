@@ -8,10 +8,7 @@ import { usePlatform } from "../hooks/usePlatform";
 const tokens = [
   { key: "swamp", name: "Swamp" },
   { key: "autofarm", name: "Autofarm" },
-  { key: "pk", name: "Pancake" },
-  { key: "bt", name: "Bitcoin" },
-  { key: "eth", name: "Ether" },
-  { key: "ada", name: "Cardano " },
+  { key: "pancake", name: "Pancake" },
 ];
 
 export default function Dashboard() {
@@ -35,7 +32,7 @@ export default function Dashboard() {
           {selectedToken.key === "swamp" && (
             <Card
               name={selectedToken.name}
-              icon={`/icons/${selectedToken.key}`}
+              icon={`/icons/${selectedToken.key}.png`}
               status={swampStatus}
               data={swampData}
             />
@@ -43,7 +40,7 @@ export default function Dashboard() {
           {selectedToken.key === "pk" && (
             <Card
               name={selectedToken.name}
-              icon={`/icons/${selectedToken.key}`}
+              icon={`/icons/${selectedToken.key}.png`}
               status={pancakeStatus}
               data={pancakeData}
             />
@@ -51,7 +48,7 @@ export default function Dashboard() {
           {selectedToken.key === "autofarm" && (
             <Card
               name={selectedToken.name}
-              icon={`/icons/${selectedToken.key}`}
+              icon={`/icons/${selectedToken.key}.png`}
               status={autofarmStatus}
               data={autofarmData}
             />

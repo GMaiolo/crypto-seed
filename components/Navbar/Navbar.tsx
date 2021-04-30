@@ -27,7 +27,9 @@ export function Navbar({ height }: NavbarProps) {
       style={{ height: height || "auto" }}
     >
       <Link href="/">
-        <Dither width={60} height={60} />
+        <a>
+          <Dither width={60} height={60} />
+        </a>
       </Link>
       {trimmedWalletAddr && (
         <div className="ml-auto flex items-center">

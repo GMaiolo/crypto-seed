@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PlatformData, Status } from "../shared/types";
+import { PlatformData, Status } from "../types";
 import axios from "axios";
 
 type PlatformHook = [status: Status, data: PlatformData];
@@ -28,7 +28,7 @@ export const usePlatform = (
         setData(data);
         setStatus("ok");
       } catch (err) {
-        console.log(err);
+        console.log(`Could not fetch ${platform} – ${err}`);
         setStatus("error");
         setData(null);
       }

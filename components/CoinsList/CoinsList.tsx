@@ -7,7 +7,7 @@ export function CoinsList({ tokens, selectedToken, onSelectToken }) {
           className={`cursor-pointer transition-transform inline-block h-10 w-10 rounded-full ${
             selectedToken.key === token.key ? "transform scale-125" : ""
           }`}
-          src={`/icons/${token.key}`}
+          src={`/icons/${token.key}.png`}
           alt="Token"
           onClick={() => onSelectToken(token)}
         />
