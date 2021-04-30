@@ -27,7 +27,7 @@ export const PoolDetails = ({ pool }: PoolDetailsProps) => {
                       alt={symbol}
                     />
                     <p className="mr-2">{symbol}</p>
-                    <p className="mr-2">{quantity.toFixed(4)}</p>
+                    <p className="mr-2">{quantity?.toFixed(4)}</p>
                     <p className="text-xs">{formatMoney(quantity * price)}</p>
                     <span className="mx-1">–</span>
                     <p className="text-xs ml-1">
