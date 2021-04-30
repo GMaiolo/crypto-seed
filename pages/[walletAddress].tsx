@@ -37,7 +37,7 @@ export default function Dashboard() {
               data={swampData}
             />
           )}
-          {selectedToken.key === "pk" && (
+          {selectedToken.key === "pancake" && (
             <Card
               name={selectedToken.name}
               icon={`/icons/${selectedToken.key}.png`}

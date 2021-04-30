@@ -17,14 +17,11 @@ export const usePlatform = (
     const getSwampInfo = async () => {
       setStatus("loading");
       try {
-        const { data } = await axios.get(
-          `http://localhost:4000/${walletAddr}/${platform}`,
-          {
-            params: {
-              onlyStaked: true,
-            },
-          }
-        );
+        const { data } = await axios.get(`/api/${walletAddr}/${platform}`, {
+          params: {
+            onlyStaked: true,
+          },
+        });
         setData(data);
         setStatus("ok");
       } catch (err) {

@@ -88,7 +88,7 @@ export function Card({ name, status, icon, data }: CardProps) {
             <div className="flex items-center justify-center">
               <img
                 className="h-12 w-auto animate-pulse"
-                src="/icons/dither"
+                src="/icons/dither_I.png"
                 alt="S33D Logo"
               />
             </div>
