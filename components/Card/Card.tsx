@@ -66,7 +66,7 @@ export function Card({ name, status, icon, data }: CardProps) {
           )}
         </div>
       </div>
-      <div className="relative p-8 shadow-soft bg-white rounded-3xl">
+      <div className="relative p-8 shadow-chill bg-white rounded-3xl">
         {status === "ok" && (
           <PlatformTable
             data={data}
